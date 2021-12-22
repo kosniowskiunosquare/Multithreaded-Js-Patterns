@@ -5,10 +5,10 @@ Lecture and exercises
 
 ## Contents
 
-- [Thread Pool](### 1. Thread Pool pattern)
-- [Mutex ](### 2. Mutex: A Basic Lock)
-- [Streaming Data](### 3. Streaming Data with Ring Buffers)
-- [Actor Model](### 4. Actor Model)
+- Thread Pool
+- Mutex 
+- Streaming Data
+- Actor Model
 
 ## Multithreaded Patterns
 
@@ -56,9 +56,9 @@ Balance between the use of cores and the use of threads results in program effic
 
 this affect the performace of the application.
 
-#### Dispatch Strategies
+### Dispatch Strategies
 
---
+---
 
 Because the goal of a thread pool is to maximize the work that can be done in parallel, it stands to reason that no single worker should get too much work to handle and no threads should be sitting there idle without work to do. A naive approach might be to just collect tasks to be done, then pass them in once the number of tasks ready to be performed meets the number of worker threads and continue once they all complete. Here’s a list of the most common strategies:
 
@@ -70,7 +70,7 @@ Because the goal of a thread pool is to maximize the work that can be done in pa
 
 #### Example implementation
 
---
+---
 
 Navigate to the ch6-thread-pool/ directory
 
@@ -90,7 +90,7 @@ Navigate to the ch6-thread-pool/ directory
 
 ---
 
-Definition
+###### Definition 
 
 Shared data access mechanism, ensures that the tasks use the resources given in time
 
@@ -98,7 +98,7 @@ commonly used when there are atomic operations
 
 #### Example Mutext
 
---
+---
 
 - Example 1
 
@@ -118,7 +118,11 @@ To solve this, we’ll implement a Mutex class using the primitives we have in A
 Result:
 
 `Mutex { shared: Int32Array(5) [ 2, 3, 5, 14, 1 ], index: 4 }`
+
+
 `Mutex { shared: Int32Array(5) [ 2, 3, 5, 70, 1 ], index: 4 }`
+
+
 `Mutex { shared: Int32Array(5) [ 2, 3, 5, 210, 1 ], index: 4 }`
 
 You can run this example with Node.js as follows:
@@ -134,7 +138,7 @@ A ring buffer is an implementation of a first-in-first-out (FIFO) queue, impleme
 
 #### Example Ring Buffer
 
---
+---
 
 You can run this example with Node.js as follows:
 
@@ -150,7 +154,7 @@ The actor model is a programming pattern for performing concurrent computation t
 
 #### Example actor model
 
---
+---
 
 You can run this example with Node.js as follows:
 
