@@ -106,7 +106,7 @@ Result:
 
 Run 1: `node thread-product.js --> works fine`
 
-Run 2: `node thread-product.js`
+Run 2: `node thread-product-mutex.js`
 
 Shows:
 
