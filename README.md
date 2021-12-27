@@ -128,6 +128,9 @@ Result:
 You can run this example with Node.js as follows:
 `$ node thread-product-mutex.js`
 
+#### SEMAPHORES
+The element in the shared array that we use to represent the state of being locked or unlocked is a trivial example of a semaphore. Semaphores are variables used to convey state information between threads. They indicate a count of a resource being used. In the case of a mutex, we limit this to 1, but semaphores in other scenarios may involve other limits for other purposes.
+
 ### 3. Streaming Data with Ring Buffers Pattern
 
 ---
